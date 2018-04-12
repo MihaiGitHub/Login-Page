@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
+  errMsg : string;
   isLoginError : boolean = false;
   constructor(private userService : UserService, private router : Router) { }
 
@@ -25,7 +26,7 @@ export class SignInComponent implements OnInit {
     },
     (err : HttpErrorResponse)=>{
         this.isLoginError = true;
-        console.log(HttpErrorResponse)
+        this.errMsg = err.error.message;
     });
   
   }

@@ -7,9 +7,8 @@
                 <h3 class="mb-0">Login</h3>
             </div>
             <div class="card-body">
-                <div *ngIf="isLoginError" class="invalid-feedback">Incorrect username or password.</div>
 
-                <form class="form" role="form" autocomplete="off" novalidate="" (ngSubmit)="OnSubmit(UserName.value,Password.value)">
+                <form #f="ngForm" class="form" (ngSubmit)="OnSubmit(UserName.value,Password.value)">
 
                     <div class="form-group">
                         <label for="uname1">Username</label>
@@ -27,8 +26,9 @@
                           <span class="custom-control-indicator"></span>
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Login</button>
-                     
+                    <button [disabled]="!f.valid" type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Login</button>
+                    <div *ngIf="isLoginError" class="invalid-feedback" style="display:block;">{{ errMsg }}</div>
+
                 </form>
             </div>
             <!--/card-block-->
