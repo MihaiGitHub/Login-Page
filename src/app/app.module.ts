@@ -12,6 +12,7 @@ import { UserService } from './shared/user.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Http } from '@angular/http';
 import { AuthGuard } from './auth/auth.guard';
+import { User } from './shared/user.model';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { AuthGuard } from './auth/auth.guard';
     RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],
-  providers: [UserService, Http, AuthGuard],
+  providers: [UserService, Http, AuthGuard, User],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
