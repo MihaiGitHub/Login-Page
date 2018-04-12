@@ -22,18 +22,17 @@ export class UserService {
         }, {
             headers: new HttpHeaders().set('Content-Type', 'application/json'), observe: 'response'
         })
-        .map(res => {
-            let myHeader = res.headers.get('my-header');
-            // Not able to access Authorization token in headers
-            console.log('header ',res.headers);
+        .map(res => {  // Pull JSON Web Token from headers
+            let token = res.headers.get('authorization').split(" ");
+            return token;
         });
 
     }
 
     getUser(){
-       /* return this.http.get(this.rootUrl+'/profile', {
+        return this.http.get(this.rootUrl+'/profile', {  // Get user profile using a Bearer schema with JSON Web Kit token
             headers : new HttpHeaders({'Authorization':'Bearer'+localStorage.getItem('userToken')
-         })}); */
+        })});
     }
     
 }
