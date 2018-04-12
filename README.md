@@ -2,9 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
+## Running Locally
+
+Make sure you have Node.js installed.
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+`git clone https://github.com/MihaiGitHub/Login-Page.git
+cd Login-Page
+npm install
+npm start`
 
 ## Code scaffolding
 
