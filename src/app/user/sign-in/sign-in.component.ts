@@ -19,8 +19,8 @@ export class SignInComponent implements OnInit {
   OnSubmit(userName,password){
     
     this.userService.userAuthentication(userName,password).subscribe((data : any)=>{
- 
-        localStorage.setItem('userToken', 'token-x');
+        // Storing unique token using HTML5 storage
+        localStorage.setItem('userToken', data[1]);
         this.router.navigate(['/home']);
      
     },
