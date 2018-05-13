@@ -6,10 +6,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Make sure you have Node.js installed.
 
-`git clone https://github.com/MihaiGitHub/Login-Page.git
-cd Login-Page
-npm install
-npm start`
+`git clone https://github.com/MihaiGitHub/Login-Page.git` <br>
+`cd Login-Page` <br>
+`npm install` <br>
+`npm start`
 
 ## Code scaffolding
 
